@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  node:
+    container_name: ${IMAGE_NAME}-node
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ./front:/app
+    ports: [ "127.0.0.1:3000:3000" ]
+    command: npm run dev
